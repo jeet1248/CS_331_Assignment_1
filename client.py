@@ -28,7 +28,7 @@ def main():
 
             # Parse response
             parts = response.decode("utf-8").split(" ")
-            recv_header, domain, resolved_ip = parts[0], parts[1], parts[2]
+            recv_header, domain, resolved_ip = parts[0], " ".join(parts[1:-1]), parts[-1]
 
             print(f"[CLIENT] Header: {recv_header} | Domain: {domain} | Resolved: {resolved_ip}")
 
